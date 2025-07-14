@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Superstore Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Superstore Sales Analysis</h1>
+    <form action="/results" method="POST">
+        <label for="category">Category:</label>
+        <select name="category" id="category">
+            {% for category in categories %}
+                <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="subcategory">Sub-Category:</label>
+        <select name="subcategory" id="subcategory">
+            {% for subcategory in subcategories %}
+                <option value="{{ subcategory }}">{{ subcategory }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="region">Region:</label>
+        <select name="region" id="region">
+            {% for region in regions %}
+                <option value="{{ region }}">{{ region }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="segment">Segment:</label>
+        <select name="segment" id="segment">
+            {% for segment in segments %}
+                <option value="{{ segment }}">{{ segment }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="query">Query:</label>
+        <select name="query" id="query">
+            {% for q in queries %}
+                <option value="{{ q }}">{{ q }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+

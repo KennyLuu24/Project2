@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Superstore Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Superstore Sales Results</h1>
+
+    {% if result is iterable and result.items %}
+        <ul>
+        {% for key, value in result.items() %}
+            <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+        </ul>
+
+    {% elif result is iterable and result[0] is mapping %}
+        <ul>
+        {% for item in result %}
+            <li>
+                <ul>
+                {% for key, value in item.items() %}
+                    <li><strong>{{ key }}:</strong> {{ value }}</li>
+                {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+        </ul>
+
+    {% else %}
+        <p>{{ result }}</p>
+    {% endif %}
+
+    <a href="/">Back to Homepage</a>
+</body>
+</html>
