@@ -1,0 +1,12 @@
+## Reflection
+
+This project gave me practical experience with building a full-stack data analysis tool using Flask and Pandas. I learned how to:
+- Dynamically populate form inputs using data from a CSV file,
+- Filter and aggregate data using pandas based on user-selected filters,
+- Return formatted analysis results to the user interface using HTML templates.
+
+One of the main challenges was designing the backend logic to support multiple distinct queries through a single form interface. I solved this by creating a conditional structure that handled each query option independently and rendered the result accordingly.
+
+This project also reinforced the value of clean code and readable output formatting, as it directly impacted how effectively users could interpret the data.
+
+Overall, the assignment helped me bridge the gap between data manipulation in pandas and deploying those insights through a web application.
